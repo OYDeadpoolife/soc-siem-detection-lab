@@ -16,6 +16,15 @@ is verified even without a SIEM.
 >   Filebeat/Winlogbeat output. Validate them in a real SIEM before relying on them.
 > * **All data is synthetic.** It is not from a real organisation or incident, and no real attack was performed.
 
+## In plain words
+
+A SOC (security operations centre) is a team that watches logs from many computers to spot attacks. This project is a **practice
+case**: a fictional company with made-up logs from a Linux web server and a Windows PC, and one made-up attack that crosses both.
+It includes 12 *detections* (saved searches that flag suspicious activity) written for Splunk and Elastic, two common monitoring
+products, a step-by-step investigation, and a Python version of every detection so the logic can be checked without those
+products. The Splunk and Elastic queries themselves have not been run in the real products. New to these terms? See the
+[glossary](docs/glossary.md).
+
 ## For a recruiter or SOC manager (30 seconds)
 
 * **Problem:** a SOC analyst must turn raw logs into a decision: *is this an attack, how far did it go, what do we do next?*
@@ -64,6 +73,10 @@ flowchart LR
     WS -->|Sysmon events| S
     FW -->|syslog| S
 ```
+
+**How to read the diagram:** an attacker on the simulated Internet (left) reaches a firewall. Behind it are a Linux web server and a
+Windows PC. Both computers, and the firewall, send their logs to one monitoring system (the SIEM, on the right), where the detections
+look for the attack.
 
 Details: [docs/architecture.md](docs/architecture.md). The firewall and its logs are covered by the pfSense lab project of this portfolio.
 
