@@ -48,7 +48,9 @@ def test_no_secrets_or_local_paths():
 
 
 def test_no_backup_or_cache_files():
-    names = [p.name for p in ROOT.rglob("*") if p.is_file() and ".git" not in p.parts]
+    # Interpreter caches (__pycache__) are created by running the tests themselves and are ignored by .gitignore.
+    skip = {".git", "__pycache__", ".pytest_cache"}
+    names = [p.name for p in ROOT.rglob("*") if p.is_file() and not skip.intersection(p.parts)]
     # .DS_Store (created by the macOS Finder) is ignored by .gitignore and removed by the packaging step.
     assert not [n for n in names if n.endswith((".orig", ".bak", ".swp", ".pyc"))]
 
