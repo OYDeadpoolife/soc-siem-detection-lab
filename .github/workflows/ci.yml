@@ -15,7 +15,7 @@ jobs:
         include:
           # Python 3.8 is no longer provided on the newest Ubuntu image, so it runs on Ubuntu 24.04.
           # It installs pytest only: the newest shfmt that pip can install on 3.8 is an old release that formats
-          # shell code differently, so the ShellCheck/shfmt test is skipped there and runs in the 3.12 job.
+          # shell code differently, so the pip-installed shfmt is used only in the 3.12 job.
           - { os: ubuntu-24.04, python: "3.8", deps: "pytest" }
           - { os: ubuntu-latest, python: "3.12", deps: "-r requirements-dev.txt" }
     steps:
