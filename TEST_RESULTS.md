@@ -69,7 +69,7 @@ Fixed in commits `8cdf1fb` and `8ff7e6c`. Both jobs have been green since.
 | **All KQL, EQL and Query DSL queries** in Elastic/Kibana | No Elastic Stack. Field names are approximations of Filebeat/Winlogbeat output |
 | `props.conf`, `inputs.conf`, `savedsearches.conf`, the dashboard, Filebeat and Winlogbeat examples | No Splunk or Elastic; the examples are checked only for secrets and well-formedness |
 | `scripts/load_to_elasticsearch.sh` sending data | No Elasticsearch; only `--dry-run` and the refusal cases were run |
-| Mermaid diagrams rendering on GitHub | Syntax is checked for balance only; rendering needs GitHub |
+| Mermaid diagrams in `docs/` rendering on GitHub | The diagram in the README was viewed on GitHub on 2026-11-19 (the first version had clipped text, so the labels were changed to SVG text). The four diagrams in `docs/` were checked only in a local Mermaid 11.4.1 render and by a syntax-balance test |
 | auditd rules on a real Linux server | Written from documentation; not applied |
 
 ## MANUAL VERIFICATION REQUIRED — to be done on your own machine
@@ -80,7 +80,7 @@ Fixed in commits `8cdf1fb` and `8ff7e6c`. Both jobs have been green since.
    `elastic/kql/queries.md` and `elastic/queries/README.md`. Check the field names in Discover first.
 3. **Auditd.** On a lab VM, apply `docs/auditd-rules.md`, run `sudo cat /etc/shadow` and confirm `ausearch -k shadow_read -i` shows it.
 4. **Python versions.** Already run in GitHub Actions (see above). Optional: repeat locally with `python3 -m pytest -q`.
-5. **Mermaid.** Open the repository on GitHub and confirm every diagram renders.
+5. **Mermaid.** The README diagram has been checked on GitHub. Open the four diagrams in `docs/` on GitHub and confirm they render with readable text.
 
 Until step 1 and 2 are done, describe this project as: *"SIEM detections and datasets with a tested Python reference implementation;
 queries written for Splunk and Elastic but not yet validated in a live SIEM."*
