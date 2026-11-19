@@ -1,0 +1,17 @@
+# ID: DET-03
+# Name: sudo request denied
+# Purpose: An account tried sudo and was refused (not in sudoers, or wrong password).
+# Data: index=soc_lab sourcetype=linux_secure (Linux auth.log)
+# MITRE ATT&CK: T1548.003 Sudo and Sudo Caching
+# Reference implementation: detections/reference_detections.py::sudo_denied
+# Expected on the synthetic datasets: svc-backup, 'user NOT in sudoers', first seen 10:08:05.
+# False positives: A user who mistypes a password; an administrator missing from sudoers by mistake.
+# Tuning: Alert only for accounts that should never use sudo (service accounts).
+# Status: NOT TESTED in Splunk. The detection logic is tested in Python; the SPL syntax and field extractions need validation in a real Splunk.
+# Lines that start with "#" are documentation. Paste only the lines below the blank line into the Splunk search bar.
+
+index=soc_lab sourcetype=linux_secure sudo ("NOT in sudoers" OR "incorrect password attempt")
+| rex "sudo:\s+(?<user>\S+)\s+:\s+(?<reason>user NOT in sudoers|\d+ incorrect password attempts?)"
+| where isnotnull(reason)
+| stats count earliest(_time) AS first_seen latest(_time) AS last_seen values(reason) AS reasons BY host user
+| convert ctime(first_seen) ctime(last_seen)

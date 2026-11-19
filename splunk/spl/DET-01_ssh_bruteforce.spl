@@ -1,0 +1,18 @@
+# ID: DET-01
+# Name: SSH brute force from one source
+# Purpose: Many failed SSH password attempts from one source address in a short time.
+# Data: index=soc_lab sourcetype=linux_secure (Linux auth.log)
+# MITRE ATT&CK: T1110.001 Password Guessing
+# Reference implementation: detections/reference_detections.py::ssh_bruteforce
+# Expected on the synthetic datasets: 203.0.113.45 with 49 failures in the 10:00 bucket and 10 in the 10:05 bucket (one attack split by the 5-minute bins).
+# False positives: Vulnerability scanners and monitoring checks (the lab scanner 10.10.30.60 makes 7 failures, below this threshold of 10); users behind one NAT address.
+# Tuning: Raise or lower the threshold; exclude trusted sources with a lookup; use streamstats time_window for a sliding window instead of bin.
+# Status: NOT TESTED in Splunk. The detection logic is tested in Python; the SPL syntax and field extractions need validation in a real Splunk.
+# Lines that start with "#" are documentation. Paste only the lines below the blank line into the Splunk search bar.
+
+index=soc_lab sourcetype=linux_secure "Failed password"
+| rex "Failed password for (?:invalid user )?(?<user>\S+) from (?<src_ip>\d{1,3}(?:\.\d{1,3}){3}) port"
+| bin _time span=5m
+| stats count AS failures dc(user) AS distinct_users values(user) AS users BY _time src_ip host
+| where failures >= 10
+| sort - failures

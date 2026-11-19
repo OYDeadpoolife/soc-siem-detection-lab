@@ -1,0 +1,19 @@
+# ID: DET-11
+# Name: Regular outbound connections (beaconing)
+# Purpose: A process connecting to the same external address at a steady interval.
+# Data: index=soc_lab sourcetype=sysmon:json EventCode=3
+# MITRE ATT&CK: T1071.001 Application Layer Protocol: Web Protocols (command and control)
+# Reference implementation: detections/reference_detections.py::beaconing
+# Expected on the synthetic datasets: wscript.exe to 203.0.113.45:443: 8 connections, average interval about 59 seconds, standard deviation about 0.5 seconds.
+# False positives: Software update checks, monitoring agents, chat clients with keep-alive connections.
+# Tuning: Tune the minimum count, the standard deviation and the interval range; allow-list known destinations.
+# Status: NOT TESTED in Splunk. The detection logic is tested in Python; the SPL syntax and field extractions need validation in a real Splunk.
+# Lines that start with "#" are documentation. Paste only the lines below the blank line into the Splunk search bar.
+
+index=soc_lab sourcetype=sysmon:json EventCode=3 Initiated=true
+| where NOT (cidrmatch("10.0.0.0/8", DestinationIp) OR cidrmatch("172.16.0.0/12", DestinationIp) OR cidrmatch("192.168.0.0/16", DestinationIp))
+| sort 0 Computer Image DestinationIp DestinationPort _time
+| streamstats current=f last(_time) AS previous_time BY Computer Image DestinationIp DestinationPort
+| eval interval=_time-previous_time
+| stats count AS connections avg(interval) AS avg_interval stdev(interval) AS stdev_interval BY Computer Image DestinationIp DestinationPort
+| where connections >= 5 AND stdev_interval < 5 AND avg_interval >= 30 AND avg_interval <= 600

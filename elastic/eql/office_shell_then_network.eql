@@ -1,0 +1,13 @@
+// ID: DET-08 + DET-10 (sequence)
+// Purpose: an Office application starts a shell, and within 2 minutes the same host makes an external connection from PowerShell.
+// MITRE ATT&CK: T1204.002, T1059.001, T1071.001
+// Data: soc-lab-windows-sysmon (Sysmon via Winlogbeat, ECS fields)
+// Expected on the synthetic data: one sequence on WS01: WINWORD.EXE -> cmd.exe (11:30:14), then powershell.exe -> 203.0.113.45:443 (11:30:16).
+// Status: NOT TESTED in Elasticsearch. Run it in Kibana > Security > Timelines > Correlation, or Dev Tools with POST /<index>/_eql/search.
+sequence by host.name with maxspan=2m
+  [process where event.code == "1"
+     and process.parent.name : ("WINWORD.EXE", "EXCEL.EXE", "POWERPNT.EXE", "OUTLOOK.EXE")
+     and process.name : ("cmd.exe", "powershell.exe", "wscript.exe", "cscript.exe", "mshta.exe")]
+  [network where event.code == "3"
+     and process.name : "powershell.exe"
+     and not cidrMatch(destination.ip, "10.0.0.0/8", "172.16.0.0/12", "192.168.0.0/16")]

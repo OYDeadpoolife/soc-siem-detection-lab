@@ -1,0 +1,17 @@
+# inputs.conf example: read the synthetic files from a folder on the Splunk server. NOT TESTED in a real Splunk.
+# Alternatively use Settings > Add Data > Upload in Splunk Web for each file (simplest for a lab).
+
+[monitor:///opt/soc-lab/datasets/linux/auth.log]
+index = soc_lab
+sourcetype = linux_secure
+host = web01
+
+[monitor:///opt/soc-lab/datasets/linux/audit.log]
+index = soc_lab
+sourcetype = linux_audit
+host = web01
+
+[monitor:///opt/soc-lab/datasets/windows/sysmon_native.jsonl]
+index = soc_lab
+sourcetype = sysmon:json
+host = WS01

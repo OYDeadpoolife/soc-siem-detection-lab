@@ -1,0 +1,16 @@
+# ID: DET-09a
+# Name: PowerShell with an encoded command (untuned)
+# Purpose: PowerShell started with -enc, -EncodedCommand or -ec.
+# Data: index=soc_lab sourcetype=sysmon:json EventCode=1
+# MITRE ATT&CK: T1059.001 PowerShell; T1027 Obfuscated Files or Information
+# Reference implementation: detections/reference_detections.py::encoded_powershell
+# Expected on the synthetic datasets: Two events: 09:00:30 (the inventory agent, a false positive) and 11:30:14 (started by cmd.exe).
+# False positives: Management agents (here the fictional HarborInventory agent) use encoded commands legitimately. See DET-09b.
+# Tuning: Decode the Base64 (UTF-16LE) outside Splunk, for example with CyberChef or base64 -d | iconv -f UTF-16LE -t UTF-8.
+# Status: NOT TESTED in Splunk. The detection logic is tested in Python; the SPL syntax and field extractions need validation in a real Splunk.
+# Lines that start with "#" are documentation. Paste only the lines below the blank line into the Splunk search bar.
+
+index=soc_lab sourcetype=sysmon:json EventCode=1 Image="*\\powershell.exe"
+| regex CommandLine="(?i)\s-(enc|encodedcommand|ec)\s"
+| table _time Computer User ParentImage CommandLine
+| sort 0 _time

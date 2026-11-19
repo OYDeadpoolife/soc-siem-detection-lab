@@ -1,0 +1,17 @@
+# ID: DET-09b
+# Name: PowerShell with an encoded command (tuned)
+# Purpose: Same as DET-09a with the known-good inventory agent excluded.
+# Data: index=soc_lab sourcetype=sysmon:json EventCode=1
+# MITRE ATT&CK: T1059.001 PowerShell; T1027 Obfuscated Files or Information
+# Reference implementation: detections/reference_detections.py::encoded_powershell (with exclude_parent_images)
+# Expected on the synthetic datasets: One event at 11:30:14 (the agent at 09:00:30 is excluded).
+# False positives: An attacker could run PowerShell from the excluded parent path; exclude on the full path and hash, not only the file name.
+# Tuning: Review the exclusion list regularly.
+# Status: NOT TESTED in Splunk. The detection logic is tested in Python; the SPL syntax and field extractions need validation in a real Splunk.
+# Lines that start with "#" are documentation. Paste only the lines below the blank line into the Splunk search bar.
+
+index=soc_lab sourcetype=sysmon:json EventCode=1 Image="*\\powershell.exe"
+| regex CommandLine="(?i)\s-(enc|encodedcommand|ec)\s"
+| search NOT ParentImage="*\\HarborInventory\\agent.exe"
+| table _time Computer User ParentImage CommandLine
+| sort 0 _time

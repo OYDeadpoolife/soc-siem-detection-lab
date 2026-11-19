@@ -1,0 +1,17 @@
+# ID: DET-10
+# Name: External connections by PowerShell or script hosts
+# Purpose: PowerShell, cmd or a script host connecting to a non-private address.
+# Data: index=soc_lab sourcetype=sysmon:json EventCode=3 (Sysmon network connection)
+# MITRE ATT&CK: T1071.001 Application Layer Protocol: Web Protocols; T1105 Ingress Tool Transfer
+# Reference implementation: detections/reference_detections.py::external_connections_by_script_hosts
+# Expected on the synthetic datasets: Two groups: powershell.exe to 203.0.113.45:443 (1 connection) and wscript.exe to the same address and port (8 connections, 11:31 to 11:38).
+# False positives: Administrative scripts that download updates. Allow-list destinations.
+# Tuning: Add known update servers as an exclusion on DestinationIp.
+# Status: NOT TESTED in Splunk. The detection logic is tested in Python; the SPL syntax and field extractions need validation in a real Splunk.
+# Lines that start with "#" are documentation. Paste only the lines below the blank line into the Splunk search bar.
+
+index=soc_lab sourcetype=sysmon:json EventCode=3 Initiated=true
+    (Image="*\\powershell.exe" OR Image="*\\wscript.exe" OR Image="*\\cscript.exe" OR Image="*\\mshta.exe" OR Image="*\\cmd.exe")
+| where NOT (cidrmatch("10.0.0.0/8", DestinationIp) OR cidrmatch("172.16.0.0/12", DestinationIp) OR cidrmatch("192.168.0.0/16", DestinationIp))
+| stats count earliest(_time) AS first_seen latest(_time) AS last_seen BY Computer Image DestinationIp DestinationPort
+| convert ctime(first_seen) ctime(last_seen)

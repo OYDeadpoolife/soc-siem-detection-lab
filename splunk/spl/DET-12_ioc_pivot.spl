@@ -1,0 +1,15 @@
+# ID: DET-12
+# Name: Indicator pivot across data sources
+# Purpose: Where does one indicator (an IP address) appear? Used after any detection names a suspicious address.
+# Data: index=soc_lab, sourcetypes linux_secure, sysmon:json and pfsense:filterlog (the firewall data is in the pfSense lab project)
+# MITRE ATT&CK: Supports all of the above (investigation query)
+# Reference implementation: detections/reference_detections.py::ioc_pivot
+# Expected on the synthetic datasets: 203.0.113.45 appears in linux_secure (214 lines) and sysmon:json (9 events); pfsense:filterlog only if the firewall data is loaded.
+# False positives: None: it is a search, not an alert.
+# Tuning: Replace the address. For a list of indicators use a lookup and the lookup command.
+# Status: NOT TESTED in Splunk. The detection logic is tested in Python; the SPL syntax and field extractions need validation in a real Splunk.
+# Lines that start with "#" are documentation. Paste only the lines below the blank line into the Splunk search bar.
+
+index=soc_lab "203.0.113.45" (sourcetype=linux_secure OR sourcetype=sysmon:json OR sourcetype=pfsense:filterlog)
+| stats count earliest(_time) AS first_seen latest(_time) AS last_seen BY sourcetype host
+| convert ctime(first_seen) ctime(last_seen)

@@ -1,0 +1,42 @@
+# savedsearches.conf example: scheduled alerts built from the detection queries. NOT TESTED in a real Splunk.
+# The search strings are shortened here; copy the full text from the matching file in splunk/spl/.
+# Thresholds are examples: tune them against your own data before enabling any alert.
+
+[SOC-LAB DET-01 SSH brute force]
+search = index=soc_lab sourcetype=linux_secure "Failed password" | rex "Failed password for (?:invalid user )?(?<user>\S+) from (?<src_ip>\d{1,3}(?:\.\d{1,3}){3}) port" | bin _time span=5m | stats count AS failures dc(user) AS distinct_users BY _time src_ip host | where failures >= 10
+dispatch.earliest_time = -15m
+dispatch.latest_time = now
+cron_schedule = */5 * * * *
+enableSched = 1
+alert_type = number of events
+alert_comparator = greater than
+alert_threshold = 0
+alert.severity = 3
+alert.suppress = 1
+alert.suppress.period = 30m
+alert.suppress.fields = src_ip
+action.log_event = 1
+
+[SOC-LAB DET-02 SSH success after failures]
+search = index=soc_lab sourcetype=linux_secure ("Failed password" OR "Accepted password" OR "Accepted publickey") | rex "(?<result>Failed|Accepted) (?<method>password|publickey) for (?:invalid user )?(?<user>\S+) from (?<src_ip>\d{1,3}(?:\.\d{1,3}){3}) port" | where isnotnull(result) | sort 0 _time | streamstats time_window=10m count(eval(result="Failed")) AS failures_last_10m BY src_ip | where result="Accepted" AND failures_last_10m >= 10
+dispatch.earliest_time = -30m
+dispatch.latest_time = now
+cron_schedule = */5 * * * *
+enableSched = 1
+alert_type = number of events
+alert_comparator = greater than
+alert_threshold = 0
+alert.severity = 5
+action.log_event = 1
+
+[SOC-LAB DET-08 Office spawning a shell]
+search = index=soc_lab sourcetype=sysmon:json EventCode=1 (ParentImage="*\\WINWORD.EXE" OR ParentImage="*\\EXCEL.EXE") (Image="*\\cmd.exe" OR Image="*\\powershell.exe" OR Image="*\\wscript.exe")
+dispatch.earliest_time = -10m
+dispatch.latest_time = now
+cron_schedule = */5 * * * *
+enableSched = 1
+alert_type = number of events
+alert_comparator = greater than
+alert_threshold = 0
+alert.severity = 4
+action.log_event = 1

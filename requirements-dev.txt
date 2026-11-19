@@ -1,0 +1,4 @@
+# Test tools only. The generator and the reference detections use the Python standard library alone.
+pytest>=7.0
+shellcheck-py>=0.9
+shfmt-py>=3.7

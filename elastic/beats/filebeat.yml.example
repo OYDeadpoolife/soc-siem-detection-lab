@@ -1,0 +1,18 @@
+# Filebeat example for the Linux server (web01). NOT TESTED against a real Elastic Stack.
+# Do not put real passwords in this file. Use the Filebeat keystore or environment variables.
+filebeat.modules:
+  - module: system
+    auth:
+      enabled: true
+      var.paths: ["/var/log/auth.log"]
+    syslog:
+      enabled: false
+
+output.elasticsearch:
+  hosts: ["https://siem01.harbor.test:9200"]      # the lab SIEM (10.10.30.50 in the lab addressing plan)
+  api_key: "${ES_API_KEY}"                         # created in Kibana > Stack Management > API keys
+  ssl.certificate_authorities: ["/etc/filebeat/http_ca.crt"]
+  index: "soc-lab-linux-auth"
+
+setup.template.name: "soc-lab-linux-auth"
+setup.template.pattern: "soc-lab-linux-auth*"

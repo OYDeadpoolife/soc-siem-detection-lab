@@ -1,0 +1,32 @@
+{
+  "size": 0,
+  "query": {
+    "bool": {
+      "should": [
+        {
+          "term": {
+            "source.ip": "203.0.113.45"
+          }
+        },
+        {
+          "term": {
+            "destination.ip": "203.0.113.45"
+          }
+        },
+        {
+          "match_phrase": {
+            "message": "203.0.113.45"
+          }
+        }
+      ],
+      "minimum_should_match": 1
+    }
+  },
+  "aggs": {
+    "by_index": {
+      "terms": {
+        "field": "_index"
+      }
+    }
+  }
+}

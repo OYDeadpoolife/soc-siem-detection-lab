@@ -1,0 +1,17 @@
+# ID: DET-08
+# Name: Office application starting a shell or script host
+# Purpose: Word, Excel, PowerPoint or Outlook starting cmd, PowerShell or a script host.
+# Data: index=soc_lab sourcetype=sysmon:json EventCode=1 (Sysmon process creation, JSON)
+# MITRE ATT&CK: T1204.002 User Execution: Malicious File; T1059.001/.003/.005/.007
+# Reference implementation: detections/reference_detections.py::office_spawning_shell
+# Expected on the synthetic datasets: One event at 11:30:14: WINWORD.EXE starts cmd.exe on WS01 for HARBOR\jdoe.
+# False positives: Documents with legitimate macros or add-ins that call a shell (rare in most organisations).
+# Tuning: Add known business macros as an exclusion on ParentCommandLine or the document path.
+# Status: NOT TESTED in Splunk. The detection logic is tested in Python; the SPL syntax and field extractions need validation in a real Splunk.
+# Lines that start with "#" are documentation. Paste only the lines below the blank line into the Splunk search bar.
+
+index=soc_lab sourcetype=sysmon:json EventCode=1
+    (ParentImage="*\\WINWORD.EXE" OR ParentImage="*\\EXCEL.EXE" OR ParentImage="*\\POWERPNT.EXE" OR ParentImage="*\\OUTLOOK.EXE")
+    (Image="*\\cmd.exe" OR Image="*\\powershell.exe" OR Image="*\\wscript.exe" OR Image="*\\cscript.exe" OR Image="*\\mshta.exe")
+| table _time Computer User ParentImage Image CommandLine
+| sort 0 _time

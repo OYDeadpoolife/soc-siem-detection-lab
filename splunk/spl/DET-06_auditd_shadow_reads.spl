@@ -1,0 +1,19 @@
+# ID: DET-06
+# Name: Read of /etc/shadow
+# Purpose: Something other than the PAM helper read the password hash file (audit key shadow_read).
+# Data: index=soc_lab sourcetype=linux_audit (auditd; needs the rules in docs/auditd-rules.md)
+# MITRE ATT&CK: T1003.008 OS Credential Dumping: /etc/passwd and /etc/shadow
+# Reference implementation: detections/reference_detections.py::shadow_reads
+# Expected on the synthetic datasets: One event at 10:12:44: /usr/bin/cat, auid=1002, uid=0. The three unix_chkpwd reads at 08:30 are excluded.
+# False positives: Backup and configuration-management tools that read /etc/shadow; add their exe paths to the exclusion.
+# Tuning: Auditd generates many shadow reads from the PAM helper unix_chkpwd, so it must be excluded.
+# Status: NOT TESTED in Splunk. The detection logic is tested in Python; the SPL syntax and field extractions need validation in a real Splunk.
+# Lines that start with "#" are documentation. Paste only the lines below the blank line into the Splunk search bar.
+
+index=soc_lab sourcetype=linux_audit SYSCALL "shadow_read"
+| rex "key=\"(?<audit_key>[^\"]+)\""
+| rex "exe=\"(?<exe>[^\"]+)\""
+| rex "\bauid=(?<auid>\d+)"
+| rex "\buid=(?<uid>\d+)"
+| where audit_key="shadow_read" AND exe!="/usr/sbin/unix_chkpwd"
+| table _time host exe auid uid

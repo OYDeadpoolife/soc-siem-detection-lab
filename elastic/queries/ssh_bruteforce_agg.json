@@ -1,0 +1,58 @@
+{
+  "size": 0,
+  "query": {
+    "bool": {
+      "filter": [
+        {
+          "term": {
+            "event.dataset": "system.auth"
+          }
+        },
+        {
+          "term": {
+            "event.action": "ssh_login"
+          }
+        },
+        {
+          "term": {
+            "event.outcome": "failure"
+          }
+        },
+        {
+          "range": {
+            "@timestamp": {
+              "gte": "2026-03-14T00:00:00Z",
+              "lt": "2026-03-15T00:00:00Z"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "aggs": {
+    "by_source": {
+      "terms": {
+        "field": "source.ip",
+        "min_doc_count": 5,
+        "size": 20
+      },
+      "aggs": {
+        "distinct_users": {
+          "cardinality": {
+            "field": "user.name"
+          }
+        },
+        "first_seen": {
+          "min": {
+            "field": "@timestamp"
+          }
+        },
+        "last_seen": {
+          "max": {
+            "field": "@timestamp"
+          }
+        }
+      }
+    }
+  }
+}

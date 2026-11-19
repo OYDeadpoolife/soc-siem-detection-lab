@@ -1,0 +1,49 @@
+{
+  "size": 20,
+  "sort": [
+    {
+      "@timestamp": "asc"
+    }
+  ],
+  "query": {
+    "bool": {
+      "filter": [
+        {
+          "term": {
+            "event.code": "1"
+          }
+        },
+        {
+          "term": {
+            "process.name": "powershell.exe"
+          }
+        },
+        {
+          "regexp": {
+            "process.command_line": {
+              "value": ".* -(enc|encodedcommand|ec) .*",
+              "case_insensitive": true
+            }
+          }
+        }
+      ],
+      "must_not": [
+        {
+          "wildcard": {
+            "process.parent.executable": {
+              "value": "*\\HarborInventory\\agent.exe",
+              "case_insensitive": true
+            }
+          }
+        }
+      ]
+    }
+  },
+  "_source": [
+    "@timestamp",
+    "host.name",
+    "user.name",
+    "process.parent.name",
+    "process.command_line"
+  ]
+}

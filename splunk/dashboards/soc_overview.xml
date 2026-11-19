@@ -1,0 +1,51 @@
+<!-- Simple XML dashboard for the SOC lab. NOT TESTED in a real Splunk (the XML is only checked for well-formedness).
+     Import: Settings > User interface > Views > New (paste), or save under an app's data/ui/views/ folder. -->
+<dashboard version="1.1">
+  <label>SOC Lab Overview</label>
+  <description>Synthetic Harbor Lab data. Time range: 2026-03-14.</description>
+  <row>
+    <panel>
+      <title>Failed SSH logins by source (DET-01)</title>
+      <chart>
+        <search>
+          <query>index=soc_lab sourcetype=linux_secure "Failed password" | rex "from (?&lt;src_ip&gt;\d{1,3}(?:\.\d{1,3}){3}) port" | stats count BY src_ip | sort - count | head 10</query>
+          <earliest>2026-03-14T00:00:00</earliest>
+          <latest>2026-03-15T00:00:00</latest>
+        </search>
+        <option name="charting.chart">bar</option>
+      </chart>
+    </panel>
+    <panel>
+      <title>Logins that followed a brute-force burst (DET-02)</title>
+      <table>
+        <search>
+          <query>index=soc_lab sourcetype=linux_secure ("Failed password" OR "Accepted password" OR "Accepted publickey") | rex "(?&lt;result&gt;Failed|Accepted) (?&lt;method&gt;password|publickey) for (?:invalid user )?(?&lt;user&gt;\S+) from (?&lt;src_ip&gt;\d{1,3}(?:\.\d{1,3}){3}) port" | where isnotnull(result) | sort 0 _time | streamstats time_window=10m count(eval(result="Failed")) AS failures_last_10m BY src_ip | where result="Accepted" AND failures_last_10m &gt;= 10 | table _time host user src_ip method failures_last_10m</query>
+          <earliest>2026-03-14T00:00:00</earliest>
+          <latest>2026-03-15T00:00:00</latest>
+        </search>
+      </table>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <title>Office applications starting shells (DET-08)</title>
+      <table>
+        <search>
+          <query>index=soc_lab sourcetype=sysmon:json EventCode=1 (ParentImage="*\\WINWORD.EXE" OR ParentImage="*\\EXCEL.EXE") (Image="*\\cmd.exe" OR Image="*\\powershell.exe") | table _time Computer User ParentImage Image</query>
+          <earliest>2026-03-14T00:00:00</earliest>
+          <latest>2026-03-15T00:00:00</latest>
+        </search>
+      </table>
+    </panel>
+    <panel>
+      <title>External connections by script hosts (DET-10)</title>
+      <table>
+        <search>
+          <query>index=soc_lab sourcetype=sysmon:json EventCode=3 Initiated=true (Image="*\\powershell.exe" OR Image="*\\wscript.exe") | where NOT cidrmatch("10.0.0.0/8", DestinationIp) | stats count BY Computer Image DestinationIp DestinationPort</query>
+          <earliest>2026-03-14T00:00:00</earliest>
+          <latest>2026-03-15T00:00:00</latest>
+        </search>
+      </table>
+    </panel>
+  </row>
+</dashboard>

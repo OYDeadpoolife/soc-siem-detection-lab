@@ -1,0 +1,18 @@
+# ID: DET-04
+# Name: su activity (successful and failed)
+# Purpose: Shows who switched to which account with su; follow the chain after a suspicious login.
+# Data: index=soc_lab sourcetype=linux_secure (Linux auth.log)
+# MITRE ATT&CK: T1078.003 Valid Accounts: Local Accounts
+# Reference implementation: detections/reference_detections.py::su_activity
+# Expected on the synthetic datasets: Two events: svc-backup to labadmin failed at 10:08:40, succeeded at 10:09:30.
+# False positives: Administrators using su legitimately. Correlate with DET-02 rather than alerting alone.
+# Tuning: Join with DET-02 results to flag su from an account that just logged in after a brute force.
+# Status: NOT TESTED in Splunk. The detection logic is tested in Python; the SPL syntax and field extractions need validation in a real Splunk.
+# Lines that start with "#" are documentation. Paste only the lines below the blank line into the Splunk search bar.
+
+index=soc_lab sourcetype=linux_secure su
+| rex "su\[\d+\]: (?<failed_marker>FAILED SU )?\(to (?<to_user>[^)]+)\) (?<from_user>\S+) on (?<tty>\S+)"
+| where isnotnull(to_user)
+| eval outcome=if(isnotnull(failed_marker), "failure", "success")
+| table _time host from_user to_user outcome tty
+| sort 0 _time

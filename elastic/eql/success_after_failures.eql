@@ -1,0 +1,10 @@
+// ID: DET-02
+// Purpose: ten or more failed SSH logins followed by a success from the same source within 10 minutes.
+// MITRE ATT&CK: T1110.001 then T1078.003
+// Data: soc-lab-linux-auth (ECS-like fields: event.category, event.action, event.outcome, source.ip)
+// Expected on the synthetic data: one sequence for source.ip 203.0.113.45 ending with the login of svc-backup at 10:06:41.
+// Status: NOT TESTED in Elasticsearch. "with runs" needs a recent 8.x version; if it is rejected, lower the runs value
+// to 1 and count the failures with a threshold rule instead.
+sequence by source.ip with maxspan=10m
+  [authentication where event.action == "ssh_login" and event.outcome == "failure"] with runs=10
+  [authentication where event.action == "ssh_login" and event.outcome == "success"]

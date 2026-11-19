@@ -1,0 +1,28 @@
+# props.conf example for the lab data. NOT TESTED in a real Splunk. Place it in the app that owns the data, for example
+# $SPLUNK_HOME/etc/apps/soc_lab/local/props.conf, then restart Splunk or reload the configuration.
+
+[linux_secure]
+# Traditional syslog lines such as "Mar 14 10:02:11 web01 sshd[2101]: ..." (no year, no time zone: set the server's zone).
+SHOULD_LINEMERGE = false
+LINE_BREAKER = ([\r\n]+)
+TIME_PREFIX = ^
+TIME_FORMAT = %b %e %H:%M:%S
+MAX_TIMESTAMP_LOOKAHEAD = 20
+TZ = UTC
+
+[linux_audit]
+# auditd records: the time is inside "msg=audit(<epoch>:<serial>)".
+SHOULD_LINEMERGE = false
+LINE_BREAKER = ([\r\n]+)
+TIME_PREFIX = msg=audit\(
+TIME_FORMAT = %s.%3N
+MAX_TIMESTAMP_LOOKAHEAD = 20
+
+[sysmon:json]
+# One JSON object per line (datasets/windows/sysmon_native.jsonl). The event time is the UtcTime field.
+INDEXED_EXTRACTIONS = json
+KV_MODE = none
+SHOULD_LINEMERGE = false
+TIMESTAMP_FIELDS = UtcTime
+TIME_FORMAT = %Y-%m-%d %H:%M:%S.%3N
+TZ = UTC

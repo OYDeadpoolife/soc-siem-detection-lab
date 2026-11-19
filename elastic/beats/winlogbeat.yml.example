@@ -1,0 +1,18 @@
+# Winlogbeat example for the Windows client (WS01) with Sysmon installed. NOT TESTED against a real Elastic Stack.
+# Sysmon itself must be installed first (Microsoft Sysinternals) with a configuration of your choice.
+winlogbeat.event_logs:
+  - name: Microsoft-Windows-Sysmon/Operational
+    processors:
+      - script:
+          lang: javascript
+          id: sysmon
+          file: ${path.home}/module/sysmon/config/winlogbeat-sysmon.js
+
+output.elasticsearch:
+  hosts: ["https://siem01.harbor.test:9200"]
+  api_key: "${ES_API_KEY}"
+  ssl.certificate_authorities: ["C:\\Program Files\\Winlogbeat\\http_ca.crt"]
+  index: "soc-lab-windows-sysmon"
+
+setup.template.name: "soc-lab-windows-sysmon"
+setup.template.pattern: "soc-lab-windows-sysmon*"

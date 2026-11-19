@@ -1,0 +1,16 @@
+type=SYSCALL msg=audit(1773477028.211:401): arch=c000003e syscall=257 success=yes exit=4 a0=ffffff9c items=1 ppid=2011 pid=2040 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="unix_chkpwd" exe="/usr/sbin/unix_chkpwd" key="shadow_read"
+type=PATH msg=audit(1773477028.211:401): item=0 name="/etc/shadow" inode=131245 dev=fd:00 mode=0100640 ouid=0 ogid=42 rdev=00:00 nametype=NORMAL
+type=SYSCALL msg=audit(1773477029.211:402): arch=c000003e syscall=257 success=yes exit=4 a0=ffffff9c items=1 ppid=2011 pid=2040 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="unix_chkpwd" exe="/usr/sbin/unix_chkpwd" key="shadow_read"
+type=PATH msg=audit(1773477029.211:402): item=0 name="/etc/shadow" inode=131245 dev=fd:00 mode=0100640 ouid=0 ogid=42 rdev=00:00 nametype=NORMAL
+type=SYSCALL msg=audit(1773477030.211:403): arch=c000003e syscall=257 success=yes exit=4 a0=ffffff9c items=1 ppid=2011 pid=2040 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="unix_chkpwd" exe="/usr/sbin/unix_chkpwd" key="shadow_read"
+type=PATH msg=audit(1773477030.211:403): item=0 name="/etc/shadow" inode=131245 dev=fd:00 mode=0100640 ouid=0 ogid=42 rdev=00:00 nametype=NORMAL
+type=USER_CMD msg=audit(1773477302.310:404): pid=1580 uid=1000 auid=1000 ses=11 msg='cwd="/home/labadmin" cmd=2F7573722F62696E2F61707420757064617465 exe="/usr/bin/sudo" terminal=pts/0 res=success'
+type=USER_CMD msg=audit(1773483002.480:405): pid=2231 uid=1000 auid=1002 ses=14 msg='cwd="/home/labadmin" cmd="/bin/bash" exe="/usr/bin/sudo" terminal=pts/0 res=success'
+type=SYSCALL msg=audit(1773483080.120:406): arch=c000003e syscall=59 success=yes exit=0 a0=55d0c8e2 items=2 ppid=2236 pid=2301 auid=1002 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=14 comm="useradd" exe="/usr/sbin/useradd" key="user_mgmt"
+type=EXECVE msg=audit(1773483080.120:406): argc=5 a0="useradd" a1="-m" a2="-s" a3="/bin/bash" a4="support01"
+type=ADD_USER msg=audit(1773483080.120:406): pid=2301 uid=0 auid=1002 ses=14 msg='op=adding user id=1003 exe="/usr/sbin/useradd" hostname=? addr=? terminal=pts/0 res=success'
+type=SYSCALL msg=audit(1773483110.640:407): arch=c000003e syscall=59 success=yes exit=0 a0=55d0c8f1 items=2 ppid=2236 pid=2310 auid=1002 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=14 comm="usermod" exe="/usr/sbin/usermod" key="user_mgmt"
+type=EXECVE msg=audit(1773483110.640:407): argc=4 a0="usermod" a1="-aG" a2="sudo" a3="support01"
+type=SYSCALL msg=audit(1773483164.090:408): arch=c000003e syscall=257 success=yes exit=3 a0=ffffff9c items=1 ppid=2236 pid=2322 auid=1002 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=14 comm="cat" exe="/usr/bin/cat" key="shadow_read"
+type=EXECVE msg=audit(1773483164.090:408): argc=2 a0="cat" a1="/etc/shadow"
+type=PATH msg=audit(1773483164.090:408): item=0 name="/etc/shadow" inode=131245 dev=fd:00 mode=0100640 ouid=0 ogid=42 rdev=00:00 nametype=NORMAL

@@ -1,0 +1,19 @@
+# ID: DET-02
+# Name: Successful SSH login after many failures
+# Purpose: A login that succeeds from a source that failed many times in the previous 10 minutes: the moment a password guess worked.
+# Data: index=soc_lab sourcetype=linux_secure (Linux auth.log)
+# MITRE ATT&CK: T1078.003 Valid Accounts: Local Accounts (after T1110.001)
+# Reference implementation: detections/reference_detections.py::success_after_failures
+# Expected on the synthetic datasets: svc-backup logged in with a password from 203.0.113.45 at 10:06:41 after 59 failures.
+# False positives: A user who mistyped many times, or a shared jump host. Check the login method: a service account that normally uses a key and now uses a password is suspicious.
+# Tuning: Adjust min failures and the window. streamstats time_window needs events in ascending time order, hence sort 0 _time.
+# Status: NOT TESTED in Splunk. The detection logic is tested in Python; the SPL syntax and field extractions need validation in a real Splunk.
+# Lines that start with "#" are documentation. Paste only the lines below the blank line into the Splunk search bar.
+
+index=soc_lab sourcetype=linux_secure ("Failed password" OR "Accepted password" OR "Accepted publickey")
+| rex "(?<result>Failed|Accepted) (?<method>password|publickey) for (?:invalid user )?(?<user>\S+) from (?<src_ip>\d{1,3}(?:\.\d{1,3}){3}) port"
+| where isnotnull(result)
+| sort 0 _time
+| streamstats time_window=10m count(eval(result="Failed")) AS failures_last_10m BY src_ip
+| where result="Accepted" AND failures_last_10m >= 10
+| table _time host user src_ip method failures_last_10m

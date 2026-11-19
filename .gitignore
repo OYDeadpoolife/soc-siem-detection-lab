@@ -1,0 +1,22 @@
+# Generated bulk files and local output
+build/
+
+# Python / test tooling
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Editors and operating systems
+.DS_Store
+*.swp
+*.orig
+*.bak
+.idea/
+.vscode/
+
+# Never commit real logs, keys or environment files. This repository contains synthetic data only.
+*.pem
+*.key
+.env

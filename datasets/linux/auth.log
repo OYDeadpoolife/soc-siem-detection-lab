@@ -1,0 +1,353 @@
+Mar 14 00:17:01 web01 CRON[968]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Mar 14 00:17:02 web01 CRON[968]: pam_unix(cron:session): session closed for user root
+Mar 14 01:17:01 web01 CRON[1208]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Mar 14 01:17:02 web01 CRON[1208]: pam_unix(cron:session): session closed for user root
+Mar 14 02:00:05 web01 sshd[1380]: Accepted publickey for svc-backup from 10.10.30.40 port 53935 ssh2
+Mar 14 02:00:05 web01 sshd[1380]: pam_unix(sshd:session): session opened for user svc-backup(uid=1002) by (uid=0)
+Mar 14 02:14:30 web01 sshd[1380]: Disconnected from user svc-backup 10.10.30.40 port 53935
+Mar 14 02:14:30 web01 sshd[1380]: pam_unix(sshd:session): session closed for user svc-backup
+Mar 14 02:17:01 web01 CRON[1448]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Mar 14 02:17:02 web01 CRON[1448]: pam_unix(cron:session): session closed for user root
+Mar 14 03:17:01 web01 CRON[1688]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Mar 14 03:17:02 web01 CRON[1688]: pam_unix(cron:session): session closed for user root
+Mar 14 04:17:01 web01 CRON[1928]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Mar 14 04:17:02 web01 CRON[1928]: pam_unix(cron:session): session closed for user root
+Mar 14 05:17:01 web01 CRON[2168]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Mar 14 05:17:02 web01 CRON[2168]: pam_unix(cron:session): session closed for user root
+Mar 14 06:17:01 web01 CRON[2408]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Mar 14 06:17:02 web01 CRON[2408]: pam_unix(cron:session): session closed for user root
+Mar 14 07:00:03 web01 sshd[2580]: Invalid user nessus-probe from 10.10.30.60 port 54404
+Mar 14 07:00:03 web01 sshd[2580]: pam_unix(sshd:auth): check pass; user unknown
+Mar 14 07:00:03 web01 sshd[2580]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=10.10.30.60
+Mar 14 07:00:03 web01 sshd[2580]: Failed password for invalid user nessus-probe from 10.10.30.60 port 54404 ssh2
+Mar 14 07:00:03 web01 sshd[2580]: Connection closed by invalid user nessus-probe 10.10.30.60 port 54404 [preauth]
+Mar 14 07:00:07 web01 sshd[2581]: Invalid user nessus-probe from 10.10.30.60 port 50485
+Mar 14 07:00:07 web01 sshd[2581]: pam_unix(sshd:auth): check pass; user unknown
+Mar 14 07:00:07 web01 sshd[2581]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=10.10.30.60
+Mar 14 07:00:07 web01 sshd[2581]: Failed password for invalid user nessus-probe from 10.10.30.60 port 50485 ssh2
+Mar 14 07:00:07 web01 sshd[2581]: Connection closed by invalid user nessus-probe 10.10.30.60 port 50485 [preauth]
+Mar 14 07:00:11 web01 sshd[2582]: Invalid user nessus-probe from 10.10.30.60 port 53920
+Mar 14 07:00:11 web01 sshd[2582]: pam_unix(sshd:auth): check pass; user unknown
+Mar 14 07:00:11 web01 sshd[2582]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=10.10.30.60
+Mar 14 07:00:11 web01 sshd[2582]: Failed password for invalid user nessus-probe from 10.10.30.60 port 53920 ssh2
+Mar 14 07:00:11 web01 sshd[2582]: Connection closed by invalid user nessus-probe 10.10.30.60 port 53920 [preauth]
+Mar 14 07:00:15 web01 sshd[2583]: Invalid user nessus-probe from 10.10.30.60 port 40428
+Mar 14 07:00:15 web01 sshd[2583]: pam_unix(sshd:auth): check pass; user unknown
+Mar 14 07:00:15 web01 sshd[2583]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=10.10.30.60
+Mar 14 07:00:15 web01 sshd[2583]: Failed password for invalid user nessus-probe from 10.10.30.60 port 40428 ssh2
+Mar 14 07:00:15 web01 sshd[2583]: Connection closed by invalid user nessus-probe 10.10.30.60 port 40428 [preauth]
+Mar 14 07:00:19 web01 sshd[2584]: Invalid user nessus-probe from 10.10.30.60 port 49248
+Mar 14 07:00:19 web01 sshd[2584]: pam_unix(sshd:auth): check pass; user unknown
+Mar 14 07:00:19 web01 sshd[2584]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=10.10.30.60
+Mar 14 07:00:19 web01 sshd[2584]: Failed password for invalid user nessus-probe from 10.10.30.60 port 49248 ssh2
+Mar 14 07:00:19 web01 sshd[2584]: Connection closed by invalid user nessus-probe 10.10.30.60 port 49248 [preauth]
+Mar 14 07:00:23 web01 sshd[2585]: Invalid user nessus-probe from 10.10.30.60 port 51843
+Mar 14 07:00:23 web01 sshd[2585]: pam_unix(sshd:auth): check pass; user unknown
+Mar 14 07:00:23 web01 sshd[2585]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=10.10.30.60
+Mar 14 07:00:23 web01 sshd[2585]: Failed password for invalid user nessus-probe from 10.10.30.60 port 51843 ssh2
+Mar 14 07:00:23 web01 sshd[2585]: Connection closed by invalid user nessus-probe 10.10.30.60 port 51843 [preauth]
+Mar 14 07:00:27 web01 sshd[2586]: Invalid user nessus-probe from 10.10.30.60 port 51876
+Mar 14 07:00:27 web01 sshd[2586]: pam_unix(sshd:auth): check pass; user unknown
+Mar 14 07:00:27 web01 sshd[2586]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=10.10.30.60
+Mar 14 07:00:27 web01 sshd[2586]: Failed password for invalid user nessus-probe from 10.10.30.60 port 51876 ssh2
+Mar 14 07:00:27 web01 sshd[2586]: Connection closed by invalid user nessus-probe 10.10.30.60 port 51876 [preauth]
+Mar 14 07:17:01 web01 CRON[2648]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Mar 14 07:17:02 web01 CRON[2648]: pam_unix(cron:session): session closed for user root
+Mar 14 08:17:01 web01 CRON[2888]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Mar 14 08:17:02 web01 CRON[2888]: pam_unix(cron:session): session closed for user root
+Mar 14 08:30:12 web01 sshd[2940]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=10.10.30.5  user=labadmin
+Mar 14 08:30:12 web01 sshd[2940]: Failed password for labadmin from 10.10.30.5 port 55011 ssh2
+Mar 14 08:30:19 web01 sshd[2941]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=10.10.30.5  user=labadmin
+Mar 14 08:30:19 web01 sshd[2941]: Failed password for labadmin from 10.10.30.5 port 53109 ssh2
+Mar 14 08:30:31 web01 sshd[2942]: Accepted publickey for labadmin from 10.10.30.5 port 54623 ssh2
+Mar 14 08:30:31 web01 sshd[2942]: pam_unix(sshd:session): session opened for user labadmin(uid=1000) by (uid=0)
+Mar 14 08:35:02 web01 sudo: labadmin : TTY=pts/0 ; PWD=/home/labadmin ; USER=root ; COMMAND=/usr/bin/apt update
+Mar 14 08:35:02 web01 sudo: pam_unix(sudo:session): session opened for user root(uid=0) by labadmin(uid=1000)
+Mar 14 09:05:12 web01 sudo: labadmin : TTY=pts/0 ; PWD=/home/labadmin ; USER=root ; COMMAND=/usr/sbin/visudo -c
+Mar 14 09:05:12 web01 sudo: pam_unix(sudo:session): session opened for user root(uid=0) by labadmin(uid=1000)
+Mar 14 09:17:01 web01 CRON[3128]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Mar 14 09:17:02 web01 CRON[3128]: pam_unix(cron:session): session closed for user root
+Mar 14 10:02:11 web01 sshd[3308]: Invalid user admin from 203.0.113.45 port 57496
+Mar 14 10:02:11 web01 sshd[3308]: pam_unix(sshd:auth): check pass; user unknown
+Mar 14 10:02:11 web01 sshd[3308]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=203.0.113.45
+Mar 14 10:02:11 web01 sshd[3308]: Failed password for invalid user admin from 203.0.113.45 port 57496 ssh2
+Mar 14 10:02:11 web01 sshd[3308]: Connection closed by invalid user admin 203.0.113.45 port 57496 [preauth]
+Mar 14 10:02:15 web01 sshd[3309]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=203.0.113.45  user=root
+Mar 14 10:02:15 web01 sshd[3309]: Failed password for root from 203.0.113.45 port 44488 ssh2
+Mar 14 10:02:19 web01 sshd[3310]: Invalid user test from 203.0.113.45 port 43774
+Mar 14 10:02:19 web01 sshd[3310]: pam_unix(sshd:auth): check pass; user unknown
+Mar 14 10:02:19 web01 sshd[3310]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=203.0.113.45
+Mar 14 10:02:19 web01 sshd[3310]: Failed password for invalid user test from 203.0.113.45 port 43774 ssh2
+Mar 14 10:02:19 web01 sshd[3310]: Connection closed by invalid user test 203.0.113.45 port 43774 [preauth]
+Mar 14 10:02:23 web01 sshd[3311]: Invalid user ubuntu from 203.0.113.45 port 45836
+Mar 14 10:02:23 web01 sshd[3311]: pam_unix(sshd:auth): check pass; user unknown
+Mar 14 10:02:23 web01 sshd[3311]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=203.0.113.45
+Mar 14 10:02:23 web01 sshd[3311]: Failed password for invalid user ubuntu from 203.0.113.45 port 45836 ssh2
+Mar 14 10:02:23 web01 sshd[3311]: Connection closed by invalid user ubuntu 203.0.113.45 port 45836 [preauth]
+Mar 14 10:02:25 web01 sshd[3312]: Invalid user oracle from 203.0.113.45 port 52219
+Mar 14 10:02:25 web01 sshd[3312]: pam_unix(sshd:auth): check pass; user unknown
+Mar 14 10:02:25 web01 sshd[3312]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=203.0.113.45
+Mar 14 10:02:25 web01 sshd[3312]: Failed password for invalid user oracle from 203.0.113.45 port 52219 ssh2
+Mar 14 10:02:25 web01 sshd[3312]: Connection closed by invalid user oracle 203.0.113.45 port 52219 [preauth]
+Mar 14 10:02:28 web01 sshd[3313]: Invalid user postgres from 203.0.113.45 port 55156
+Mar 14 10:02:28 web01 sshd[3313]: pam_unix(sshd:auth): check pass; user unknown
+Mar 14 10:02:28 web01 sshd[3313]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=203.0.113.45
+Mar 14 10:02:28 web01 sshd[3313]: Failed password for invalid user postgres from 203.0.113.45 port 55156 ssh2
+Mar 14 10:02:28 web01 sshd[3313]: Connection closed by invalid user postgres 203.0.113.45 port 55156 [preauth]
+Mar 14 10:02:32 web01 sshd[3314]: Invalid user user from 203.0.113.45 port 42681
+Mar 14 10:02:32 web01 sshd[3314]: pam_unix(sshd:auth): check pass; user unknown
+Mar 14 10:02:32 web01 sshd[3314]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=203.0.113.45
+Mar 14 10:02:32 web01 sshd[3314]: Failed password for invalid user user from 203.0.113.45 port 42681 ssh2
+Mar 14 10:02:32 web01 sshd[3314]: Connection closed by invalid user user 203.0.113.45 port 42681 [preauth]
+Mar 14 10:02:35 web01 sshd[3315]: Invalid user guest from 203.0.113.45 port 51025
+Mar 14 10:02:35 web01 sshd[3315]: pam_unix(sshd:auth): check pass; user unknown
+Mar 14 10:02:35 web01 sshd[3315]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=203.0.113.45
+Mar 14 10:02:35 web01 sshd[3315]: Failed password for invalid user guest from 203.0.113.45 port 51025 ssh2
+Mar 14 10:02:35 web01 sshd[3315]: Connection closed by invalid user guest 203.0.113.45 port 51025 [preauth]
+Mar 14 10:02:38 web01 sshd[3316]: Invalid user pi from 203.0.113.45 port 56018
+Mar 14 10:02:38 web01 sshd[3316]: pam_unix(sshd:auth): check pass; user unknown
+Mar 14 10:02:38 web01 sshd[3316]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=203.0.113.45
+Mar 14 10:02:38 web01 sshd[3316]: Failed password for invalid user pi from 203.0.113.45 port 56018 ssh2
+Mar 14 10:02:38 web01 sshd[3316]: Connection closed by invalid user pi 203.0.113.45 port 56018 [preauth]
+Mar 14 10:02:41 web01 sshd[3317]: Invalid user ftpuser from 203.0.113.45 port 45054
+Mar 14 10:02:41 web01 sshd[3317]: pam_unix(sshd:auth): check pass; user unknown
+Mar 14 10:02:41 web01 sshd[3317]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=203.0.113.45
+Mar 14 10:02:41 web01 sshd[3317]: Failed password for invalid user ftpuser from 203.0.113.45 port 45054 ssh2
+Mar 14 10:02:41 web01 sshd[3317]: Connection closed by invalid user ftpuser 203.0.113.45 port 45054 [preauth]
+Mar 14 10:02:44 web01 sshd[3318]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=203.0.113.45  user=deploy
+Mar 14 10:02:44 web01 sshd[3318]: Failed password for deploy from 203.0.113.45 port 41244 ssh2
+Mar 14 10:02:48 web01 sshd[3319]: Invalid user support from 203.0.113.45 port 43081
+Mar 14 10:02:48 web01 sshd[3319]: pam_unix(sshd:auth): check pass; user unknown
+Mar 14 10:02:48 web01 sshd[3319]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=203.0.113.45
+Mar 14 10:02:48 web01 sshd[3319]: Failed password for invalid user support from 203.0.113.45 port 43081 ssh2
+Mar 14 10:02:48 web01 sshd[3319]: Connection closed by invalid user support 203.0.113.45 port 43081 [preauth]
+Mar 14 10:02:52 web01 sshd[3320]: Invalid user admin from 203.0.113.45 port 53985
+Mar 14 10:02:52 web01 sshd[3320]: pam_unix(sshd:auth): check pass; user unknown
+Mar 14 10:02:52 web01 sshd[3320]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=203.0.113.45
+Mar 14 10:02:52 web01 sshd[3320]: Failed password for invalid user admin from 203.0.113.45 port 53985 ssh2
+Mar 14 10:02:52 web01 sshd[3320]: Connection closed by invalid user admin 203.0.113.45 port 53985 [preauth]
+Mar 14 10:02:57 web01 sshd[3321]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=203.0.113.45  user=root
+Mar 14 10:02:57 web01 sshd[3321]: Failed password for root from 203.0.113.45 port 40851 ssh2
+Mar 14 10:03:01 web01 sshd[3322]: Invalid user test from 203.0.113.45 port 40217
+Mar 14 10:03:01 web01 sshd[3322]: pam_unix(sshd:auth): check pass; user unknown
+Mar 14 10:03:01 web01 sshd[3322]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=203.0.113.45
+Mar 14 10:03:01 web01 sshd[3322]: Failed password for invalid user test from 203.0.113.45 port 40217 ssh2
+Mar 14 10:03:01 web01 sshd[3322]: Connection closed by invalid user test 203.0.113.45 port 40217 [preauth]
+Mar 14 10:03:04 web01 sshd[3323]: Invalid user ubuntu from 203.0.113.45 port 51803
+Mar 14 10:03:04 web01 sshd[3323]: pam_unix(sshd:auth): check pass; user unknown
+Mar 14 10:03:04 web01 sshd[3323]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=203.0.113.45
+Mar 14 10:03:04 web01 sshd[3323]: Failed password for invalid user ubuntu from 203.0.113.45 port 51803 ssh2
+Mar 14 10:03:04 web01 sshd[3323]: Connection closed by invalid user ubuntu 203.0.113.45 port 51803 [preauth]
+Mar 14 10:03:07 web01 sshd[3324]: Invalid user oracle from 203.0.113.45 port 43904
+Mar 14 10:03:07 web01 sshd[3324]: pam_unix(sshd:auth): check pass; user unknown
+Mar 14 10:03:07 web01 sshd[3324]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=203.0.113.45
+Mar 14 10:03:07 web01 sshd[3324]: Failed password for invalid user oracle from 203.0.113.45 port 43904 ssh2
+Mar 14 10:03:07 web01 sshd[3324]: Connection closed by invalid user oracle 203.0.113.45 port 43904 [preauth]
+Mar 14 10:03:10 web01 sshd[3325]: Invalid user postgres from 203.0.113.45 port 58528
+Mar 14 10:03:10 web01 sshd[3325]: pam_unix(sshd:auth): check pass; user unknown
+Mar 14 10:03:10 web01 sshd[3325]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=203.0.113.45
+Mar 14 10:03:10 web01 sshd[3325]: Failed password for invalid user postgres from 203.0.113.45 port 58528 ssh2
+Mar 14 10:03:10 web01 sshd[3325]: Connection closed by invalid user postgres 203.0.113.45 port 58528 [preauth]
+Mar 14 10:03:14 web01 sshd[3326]: Invalid user user from 203.0.113.45 port 43630
+Mar 14 10:03:14 web01 sshd[3326]: pam_unix(sshd:auth): check pass; user unknown
+Mar 14 10:03:14 web01 sshd[3326]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=203.0.113.45
+Mar 14 10:03:14 web01 sshd[3326]: Failed password for invalid user user from 203.0.113.45 port 43630 ssh2
+Mar 14 10:03:14 web01 sshd[3326]: Connection closed by invalid user user 203.0.113.45 port 43630 [preauth]
+Mar 14 10:03:18 web01 sshd[3327]: Invalid user guest from 203.0.113.45 port 52435
+Mar 14 10:03:18 web01 sshd[3327]: pam_unix(sshd:auth): check pass; user unknown
+Mar 14 10:03:18 web01 sshd[3327]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=203.0.113.45
+Mar 14 10:03:18 web01 sshd[3327]: Failed password for invalid user guest from 203.0.113.45 port 52435 ssh2
+Mar 14 10:03:18 web01 sshd[3327]: Connection closed by invalid user guest 203.0.113.45 port 52435 [preauth]
+Mar 14 10:03:22 web01 sshd[3328]: Invalid user pi from 203.0.113.45 port 45332
+Mar 14 10:03:22 web01 sshd[3328]: pam_unix(sshd:auth): check pass; user unknown
+Mar 14 10:03:22 web01 sshd[3328]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=203.0.113.45
+Mar 14 10:03:22 web01 sshd[3328]: Failed password for invalid user pi from 203.0.113.45 port 45332 ssh2
+Mar 14 10:03:22 web01 sshd[3328]: Connection closed by invalid user pi 203.0.113.45 port 45332 [preauth]
+Mar 14 10:03:25 web01 sshd[3329]: Invalid user ftpuser from 203.0.113.45 port 59503
+Mar 14 10:03:25 web01 sshd[3329]: pam_unix(sshd:auth): check pass; user unknown
+Mar 14 10:03:25 web01 sshd[3329]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=203.0.113.45
+Mar 14 10:03:25 web01 sshd[3329]: Failed password for invalid user ftpuser from 203.0.113.45 port 59503 ssh2
+Mar 14 10:03:25 web01 sshd[3329]: Connection closed by invalid user ftpuser 203.0.113.45 port 59503 [preauth]
+Mar 14 10:03:27 web01 sshd[3330]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=203.0.113.45  user=deploy
+Mar 14 10:03:27 web01 sshd[3330]: Failed password for deploy from 203.0.113.45 port 41278 ssh2
+Mar 14 10:03:30 web01 sshd[3331]: Invalid user support from 203.0.113.45 port 42455
+Mar 14 10:03:30 web01 sshd[3331]: pam_unix(sshd:auth): check pass; user unknown
+Mar 14 10:03:30 web01 sshd[3331]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=203.0.113.45
+Mar 14 10:03:30 web01 sshd[3331]: Failed password for invalid user support from 203.0.113.45 port 42455 ssh2
+Mar 14 10:03:30 web01 sshd[3331]: Connection closed by invalid user support 203.0.113.45 port 42455 [preauth]
+Mar 14 10:03:35 web01 sshd[3332]: Invalid user admin from 203.0.113.45 port 50052
+Mar 14 10:03:35 web01 sshd[3332]: pam_unix(sshd:auth): check pass; user unknown
+Mar 14 10:03:35 web01 sshd[3332]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=203.0.113.45
+Mar 14 10:03:35 web01 sshd[3332]: Failed password for invalid user admin from 203.0.113.45 port 50052 ssh2
+Mar 14 10:03:35 web01 sshd[3332]: Connection closed by invalid user admin 203.0.113.45 port 50052 [preauth]
+Mar 14 10:03:37 web01 sshd[3333]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=203.0.113.45  user=root
+Mar 14 10:03:37 web01 sshd[3333]: Failed password for root from 203.0.113.45 port 54950 ssh2
+Mar 14 10:03:40 web01 sshd[3334]: Invalid user test from 203.0.113.45 port 57374
+Mar 14 10:03:40 web01 sshd[3334]: pam_unix(sshd:auth): check pass; user unknown
+Mar 14 10:03:40 web01 sshd[3334]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=203.0.113.45
+Mar 14 10:03:40 web01 sshd[3334]: Failed password for invalid user test from 203.0.113.45 port 57374 ssh2
+Mar 14 10:03:40 web01 sshd[3334]: Connection closed by invalid user test 203.0.113.45 port 57374 [preauth]
+Mar 14 10:03:44 web01 sshd[3335]: Invalid user ubuntu from 203.0.113.45 port 59791
+Mar 14 10:03:44 web01 sshd[3335]: pam_unix(sshd:auth): check pass; user unknown
+Mar 14 10:03:44 web01 sshd[3335]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=203.0.113.45
+Mar 14 10:03:44 web01 sshd[3335]: Failed password for invalid user ubuntu from 203.0.113.45 port 59791 ssh2
+Mar 14 10:03:44 web01 sshd[3335]: Connection closed by invalid user ubuntu 203.0.113.45 port 59791 [preauth]
+Mar 14 10:03:48 web01 sshd[3336]: Invalid user oracle from 203.0.113.45 port 53734
+Mar 14 10:03:48 web01 sshd[3336]: pam_unix(sshd:auth): check pass; user unknown
+Mar 14 10:03:48 web01 sshd[3336]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=203.0.113.45
+Mar 14 10:03:48 web01 sshd[3336]: Failed password for invalid user oracle from 203.0.113.45 port 53734 ssh2
+Mar 14 10:03:48 web01 sshd[3336]: Connection closed by invalid user oracle 203.0.113.45 port 53734 [preauth]
+Mar 14 10:03:51 web01 sshd[3337]: Invalid user postgres from 203.0.113.45 port 41805
+Mar 14 10:03:51 web01 sshd[3337]: pam_unix(sshd:auth): check pass; user unknown
+Mar 14 10:03:51 web01 sshd[3337]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=203.0.113.45
+Mar 14 10:03:51 web01 sshd[3337]: Failed password for invalid user postgres from 203.0.113.45 port 41805 ssh2
+Mar 14 10:03:51 web01 sshd[3337]: Connection closed by invalid user postgres 203.0.113.45 port 41805 [preauth]
+Mar 14 10:03:54 web01 sshd[3338]: Invalid user user from 203.0.113.45 port 56449
+Mar 14 10:03:54 web01 sshd[3338]: pam_unix(sshd:auth): check pass; user unknown
+Mar 14 10:03:54 web01 sshd[3338]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=203.0.113.45
+Mar 14 10:03:54 web01 sshd[3338]: Failed password for invalid user user from 203.0.113.45 port 56449 ssh2
+Mar 14 10:03:54 web01 sshd[3338]: Connection closed by invalid user user 203.0.113.45 port 56449 [preauth]
+Mar 14 10:03:57 web01 sshd[3339]: Invalid user guest from 203.0.113.45 port 58057
+Mar 14 10:03:57 web01 sshd[3339]: pam_unix(sshd:auth): check pass; user unknown
+Mar 14 10:03:57 web01 sshd[3339]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=203.0.113.45
+Mar 14 10:03:57 web01 sshd[3339]: Failed password for invalid user guest from 203.0.113.45 port 58057 ssh2
+Mar 14 10:03:57 web01 sshd[3339]: Connection closed by invalid user guest 203.0.113.45 port 58057 [preauth]
+Mar 14 10:04:01 web01 sshd[3340]: Invalid user pi from 203.0.113.45 port 43146
+Mar 14 10:04:01 web01 sshd[3340]: pam_unix(sshd:auth): check pass; user unknown
+Mar 14 10:04:01 web01 sshd[3340]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=203.0.113.45
+Mar 14 10:04:01 web01 sshd[3340]: Failed password for invalid user pi from 203.0.113.45 port 43146 ssh2
+Mar 14 10:04:01 web01 sshd[3340]: Connection closed by invalid user pi 203.0.113.45 port 43146 [preauth]
+Mar 14 10:04:04 web01 sshd[3341]: Invalid user ftpuser from 203.0.113.45 port 58494
+Mar 14 10:04:04 web01 sshd[3341]: pam_unix(sshd:auth): check pass; user unknown
+Mar 14 10:04:04 web01 sshd[3341]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=203.0.113.45
+Mar 14 10:04:04 web01 sshd[3341]: Failed password for invalid user ftpuser from 203.0.113.45 port 58494 ssh2
+Mar 14 10:04:04 web01 sshd[3341]: Connection closed by invalid user ftpuser 203.0.113.45 port 58494 [preauth]
+Mar 14 10:04:08 web01 sshd[3342]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=203.0.113.45  user=deploy
+Mar 14 10:04:08 web01 sshd[3342]: Failed password for deploy from 203.0.113.45 port 49890 ssh2
+Mar 14 10:04:12 web01 sshd[3343]: Invalid user support from 203.0.113.45 port 41524
+Mar 14 10:04:12 web01 sshd[3343]: pam_unix(sshd:auth): check pass; user unknown
+Mar 14 10:04:12 web01 sshd[3343]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=203.0.113.45
+Mar 14 10:04:12 web01 sshd[3343]: Failed password for invalid user support from 203.0.113.45 port 41524 ssh2
+Mar 14 10:04:12 web01 sshd[3343]: Connection closed by invalid user support 203.0.113.45 port 41524 [preauth]
+Mar 14 10:04:16 web01 sshd[3344]: Invalid user admin from 203.0.113.45 port 52845
+Mar 14 10:04:16 web01 sshd[3344]: pam_unix(sshd:auth): check pass; user unknown
+Mar 14 10:04:16 web01 sshd[3344]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=203.0.113.45
+Mar 14 10:04:16 web01 sshd[3344]: Failed password for invalid user admin from 203.0.113.45 port 52845 ssh2
+Mar 14 10:04:16 web01 sshd[3344]: Connection closed by invalid user admin 203.0.113.45 port 52845 [preauth]
+Mar 14 10:04:19 web01 sshd[3345]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=203.0.113.45  user=root
+Mar 14 10:04:19 web01 sshd[3345]: Failed password for root from 203.0.113.45 port 55236 ssh2
+Mar 14 10:04:21 web01 sshd[3346]: Invalid user test from 203.0.113.45 port 46647
+Mar 14 10:04:21 web01 sshd[3346]: pam_unix(sshd:auth): check pass; user unknown
+Mar 14 10:04:21 web01 sshd[3346]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=203.0.113.45
+Mar 14 10:04:21 web01 sshd[3346]: Failed password for invalid user test from 203.0.113.45 port 46647 ssh2
+Mar 14 10:04:21 web01 sshd[3346]: Connection closed by invalid user test 203.0.113.45 port 46647 [preauth]
+Mar 14 10:04:24 web01 sshd[3347]: Invalid user ubuntu from 203.0.113.45 port 45235
+Mar 14 10:04:24 web01 sshd[3347]: pam_unix(sshd:auth): check pass; user unknown
+Mar 14 10:04:24 web01 sshd[3347]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=203.0.113.45
+Mar 14 10:04:24 web01 sshd[3347]: Failed password for invalid user ubuntu from 203.0.113.45 port 45235 ssh2
+Mar 14 10:04:24 web01 sshd[3347]: Connection closed by invalid user ubuntu 203.0.113.45 port 45235 [preauth]
+Mar 14 10:04:27 web01 sshd[3348]: Invalid user oracle from 203.0.113.45 port 47864
+Mar 14 10:04:27 web01 sshd[3348]: pam_unix(sshd:auth): check pass; user unknown
+Mar 14 10:04:27 web01 sshd[3348]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=203.0.113.45
+Mar 14 10:04:27 web01 sshd[3348]: Failed password for invalid user oracle from 203.0.113.45 port 47864 ssh2
+Mar 14 10:04:27 web01 sshd[3348]: Connection closed by invalid user oracle 203.0.113.45 port 47864 [preauth]
+Mar 14 10:04:31 web01 sshd[3349]: Invalid user postgres from 203.0.113.45 port 50706
+Mar 14 10:04:31 web01 sshd[3349]: pam_unix(sshd:auth): check pass; user unknown
+Mar 14 10:04:31 web01 sshd[3349]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=203.0.113.45
+Mar 14 10:04:31 web01 sshd[3349]: Failed password for invalid user postgres from 203.0.113.45 port 50706 ssh2
+Mar 14 10:04:31 web01 sshd[3349]: Connection closed by invalid user postgres 203.0.113.45 port 50706 [preauth]
+Mar 14 10:04:35 web01 sshd[3350]: Invalid user user from 203.0.113.45 port 42887
+Mar 14 10:04:35 web01 sshd[3350]: pam_unix(sshd:auth): check pass; user unknown
+Mar 14 10:04:35 web01 sshd[3350]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=203.0.113.45
+Mar 14 10:04:35 web01 sshd[3350]: Failed password for invalid user user from 203.0.113.45 port 42887 ssh2
+Mar 14 10:04:35 web01 sshd[3350]: Connection closed by invalid user user 203.0.113.45 port 42887 [preauth]
+Mar 14 10:04:39 web01 sshd[3351]: Invalid user guest from 203.0.113.45 port 43482
+Mar 14 10:04:39 web01 sshd[3351]: pam_unix(sshd:auth): check pass; user unknown
+Mar 14 10:04:39 web01 sshd[3351]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=203.0.113.45
+Mar 14 10:04:39 web01 sshd[3351]: Failed password for invalid user guest from 203.0.113.45 port 43482 ssh2
+Mar 14 10:04:39 web01 sshd[3351]: Connection closed by invalid user guest 203.0.113.45 port 43482 [preauth]
+Mar 14 10:04:42 web01 sshd[3352]: Invalid user pi from 203.0.113.45 port 52522
+Mar 14 10:04:42 web01 sshd[3352]: pam_unix(sshd:auth): check pass; user unknown
+Mar 14 10:04:42 web01 sshd[3352]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=203.0.113.45
+Mar 14 10:04:42 web01 sshd[3352]: Failed password for invalid user pi from 203.0.113.45 port 52522 ssh2
+Mar 14 10:04:42 web01 sshd[3352]: Connection closed by invalid user pi 203.0.113.45 port 52522 [preauth]
+Mar 14 10:04:46 web01 sshd[3353]: Invalid user ftpuser from 203.0.113.45 port 48621
+Mar 14 10:04:46 web01 sshd[3353]: pam_unix(sshd:auth): check pass; user unknown
+Mar 14 10:04:46 web01 sshd[3353]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=203.0.113.45
+Mar 14 10:04:46 web01 sshd[3353]: Failed password for invalid user ftpuser from 203.0.113.45 port 48621 ssh2
+Mar 14 10:04:46 web01 sshd[3353]: Connection closed by invalid user ftpuser 203.0.113.45 port 48621 [preauth]
+Mar 14 10:04:50 web01 sshd[3354]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=203.0.113.45  user=deploy
+Mar 14 10:04:50 web01 sshd[3354]: Failed password for deploy from 203.0.113.45 port 47158 ssh2
+Mar 14 10:04:52 web01 sshd[3355]: Invalid user support from 203.0.113.45 port 55304
+Mar 14 10:04:52 web01 sshd[3355]: pam_unix(sshd:auth): check pass; user unknown
+Mar 14 10:04:52 web01 sshd[3355]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=203.0.113.45
+Mar 14 10:04:52 web01 sshd[3355]: Failed password for invalid user support from 203.0.113.45 port 55304 ssh2
+Mar 14 10:04:52 web01 sshd[3355]: Connection closed by invalid user support 203.0.113.45 port 55304 [preauth]
+Mar 14 10:04:55 web01 sshd[3356]: Invalid user admin from 203.0.113.45 port 57664
+Mar 14 10:04:55 web01 sshd[3356]: pam_unix(sshd:auth): check pass; user unknown
+Mar 14 10:04:55 web01 sshd[3356]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=203.0.113.45
+Mar 14 10:04:55 web01 sshd[3356]: Failed password for invalid user admin from 203.0.113.45 port 57664 ssh2
+Mar 14 10:04:55 web01 sshd[3356]: Connection closed by invalid user admin 203.0.113.45 port 57664 [preauth]
+Mar 14 10:05:00 web01 sshd[3357]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=203.0.113.45  user=root
+Mar 14 10:05:00 web01 sshd[3357]: Failed password for root from 203.0.113.45 port 51479 ssh2
+Mar 14 10:05:03 web01 sshd[3358]: Invalid user test from 203.0.113.45 port 56146
+Mar 14 10:05:03 web01 sshd[3358]: pam_unix(sshd:auth): check pass; user unknown
+Mar 14 10:05:03 web01 sshd[3358]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=203.0.113.45
+Mar 14 10:05:03 web01 sshd[3358]: Failed password for invalid user test from 203.0.113.45 port 56146 ssh2
+Mar 14 10:05:03 web01 sshd[3358]: Connection closed by invalid user test 203.0.113.45 port 56146 [preauth]
+Mar 14 10:05:06 web01 sshd[3359]: Invalid user ubuntu from 203.0.113.45 port 51808
+Mar 14 10:05:06 web01 sshd[3359]: pam_unix(sshd:auth): check pass; user unknown
+Mar 14 10:05:06 web01 sshd[3359]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=203.0.113.45
+Mar 14 10:05:06 web01 sshd[3359]: Failed password for invalid user ubuntu from 203.0.113.45 port 51808 ssh2
+Mar 14 10:05:06 web01 sshd[3359]: Connection closed by invalid user ubuntu 203.0.113.45 port 51808 [preauth]
+Mar 14 10:05:09 web01 sshd[3360]: Invalid user oracle from 203.0.113.45 port 55989
+Mar 14 10:05:09 web01 sshd[3360]: pam_unix(sshd:auth): check pass; user unknown
+Mar 14 10:05:09 web01 sshd[3360]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=203.0.113.45
+Mar 14 10:05:09 web01 sshd[3360]: Failed password for invalid user oracle from 203.0.113.45 port 55989 ssh2
+Mar 14 10:05:09 web01 sshd[3360]: Connection closed by invalid user oracle 203.0.113.45 port 55989 [preauth]
+Mar 14 10:05:12 web01 sshd[3361]: Invalid user postgres from 203.0.113.45 port 54061
+Mar 14 10:05:12 web01 sshd[3361]: pam_unix(sshd:auth): check pass; user unknown
+Mar 14 10:05:12 web01 sshd[3361]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=203.0.113.45
+Mar 14 10:05:12 web01 sshd[3361]: Failed password for invalid user postgres from 203.0.113.45 port 54061 ssh2
+Mar 14 10:05:12 web01 sshd[3361]: Connection closed by invalid user postgres 203.0.113.45 port 54061 [preauth]
+Mar 14 10:05:16 web01 sshd[3362]: Invalid user user from 203.0.113.45 port 53881
+Mar 14 10:05:16 web01 sshd[3362]: pam_unix(sshd:auth): check pass; user unknown
+Mar 14 10:05:16 web01 sshd[3362]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=203.0.113.45
+Mar 14 10:05:16 web01 sshd[3362]: Failed password for invalid user user from 203.0.113.45 port 53881 ssh2
+Mar 14 10:05:16 web01 sshd[3362]: Connection closed by invalid user user 203.0.113.45 port 53881 [preauth]
+Mar 14 10:05:20 web01 sshd[3363]: Invalid user guest from 203.0.113.45 port 51278
+Mar 14 10:05:20 web01 sshd[3363]: pam_unix(sshd:auth): check pass; user unknown
+Mar 14 10:05:20 web01 sshd[3363]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=203.0.113.45
+Mar 14 10:05:20 web01 sshd[3363]: Failed password for invalid user guest from 203.0.113.45 port 51278 ssh2
+Mar 14 10:05:20 web01 sshd[3363]: Connection closed by invalid user guest 203.0.113.45 port 51278 [preauth]
+Mar 14 10:06:12 web01 sshd[3364]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=203.0.113.45  user=svc-backup
+Mar 14 10:06:12 web01 sshd[3364]: Failed password for svc-backup from 203.0.113.45 port 52918 ssh2
+Mar 14 10:06:16 web01 sshd[3365]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=203.0.113.45  user=svc-backup
+Mar 14 10:06:16 web01 sshd[3365]: Failed password for svc-backup from 203.0.113.45 port 52657 ssh2
+Mar 14 10:06:20 web01 sshd[3366]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=203.0.113.45  user=svc-backup
+Mar 14 10:06:20 web01 sshd[3366]: Failed password for svc-backup from 203.0.113.45 port 56609 ssh2
+Mar 14 10:06:41 web01 sshd[3367]: Accepted password for svc-backup from 203.0.113.45 port 52368 ssh2
+Mar 14 10:06:41 web01 sshd[3367]: pam_unix(sshd:session): session opened for user svc-backup(uid=1002) by (uid=0)
+Mar 14 10:08:05 web01 sudo: svc-backup : user NOT in sudoers ; TTY=pts/0 ; PWD=/home/svc-backup ; USER=root ; COMMAND=/usr/bin/bash
+Mar 14 10:08:40 web01 su[3369]: FAILED SU (to labadmin) svc-backup on pts/0
+Mar 14 10:09:30 web01 su[3370]: (to labadmin) svc-backup on pts/0
+Mar 14 10:09:30 web01 su[3370]: pam_unix(su-l:session): session opened for user labadmin(uid=1000) by svc-backup(uid=1002)
+Mar 14 10:10:02 web01 sudo: labadmin : TTY=pts/0 ; PWD=/home/labadmin ; USER=root ; COMMAND=/bin/bash
+Mar 14 10:10:02 web01 sudo: pam_unix(sudo:session): session opened for user root(uid=0) by labadmin(uid=1000)
+Mar 14 10:11:20 web01 useradd[3371]: new group: name=support01, GID=1003
+Mar 14 10:11:20 web01 useradd[3371]: new user: name=support01, UID=1003, GID=1003, home=/home/support01, shell=/bin/bash, from=/dev/pts/0
+Mar 14 10:11:35 web01 passwd[3372]: pam_unix(passwd:chauthtok): password changed for support01
+Mar 14 10:11:50 web01 usermod[3373]: add 'support01' to group 'sudo'
+Mar 14 10:11:50 web01 usermod[3373]: add 'support01' to shadow group 'sudo'
+Mar 14 10:14:30 web01 sshd[3367]: Disconnected from user svc-backup 203.0.113.45 port 52368
+Mar 14 10:14:30 web01 sshd[3367]: pam_unix(sshd:session): session closed for user svc-backup
+Mar 14 10:17:01 web01 CRON[3368]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Mar 14 10:17:02 web01 CRON[3368]: pam_unix(cron:session): session closed for user root
+Mar 14 11:17:01 web01 CRON[3608]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Mar 14 11:17:02 web01 CRON[3608]: pam_unix(cron:session): session closed for user root
+Mar 14 12:17:01 web01 CRON[3848]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Mar 14 12:17:02 web01 CRON[3848]: pam_unix(cron:session): session closed for user root
+Mar 14 12:40:17 web01 sudo: labadmin : TTY=pts/0 ; PWD=/home/labadmin ; USER=root ; COMMAND=/usr/bin/systemctl restart nginx
+Mar 14 12:40:17 web01 sudo: pam_unix(sudo:session): session opened for user root(uid=0) by labadmin(uid=1000)
+Mar 14 12:55:00 web01 sshd[2942]: Disconnected from user labadmin 10.10.30.5 port 54623
+Mar 14 12:55:00 web01 sshd[2942]: pam_unix(sshd:session): session closed for user labadmin

@@ -1,0 +1,20 @@
+# ID: DET-05
+# Name: New account or privileged group change
+# Purpose: A local account was created, or added to a privileged group (persistence).
+# Data: index=soc_lab sourcetype=linux_secure (Linux auth.log)
+# MITRE ATT&CK: T1136.001 Create Account: Local Account; T1098 Account Manipulation
+# Reference implementation: detections/reference_detections.py::account_changes
+# Expected on the synthetic datasets: support01 created at 10:11:20 and added to group sudo at 10:11:50.
+# False positives: Planned onboarding. Compare with change tickets.
+# Tuning: Note: useradd and usermod do not log who ran them; use auditd (DET-07) for the actor.
+# Status: NOT TESTED in Splunk. The detection logic is tested in Python; the SPL syntax and field extractions need validation in a real Splunk.
+# Lines that start with "#" are documentation. Paste only the lines below the blank line into the Splunk search bar.
+
+index=soc_lab sourcetype=linux_secure (useradd OR usermod)
+| rex "new user: name=(?<account>[^,]+)"
+| rex "add '(?<account_group>[^']+)' to group '(?<group>[^']+)'"
+| eval account=coalesce(account, account_group)
+| eval change=if(isnotnull(group), "added to group ".group, "account created")
+| where isnotnull(account) AND (isnull(group) OR group IN ("sudo","admin","wheel","root","adm","shadow","docker","lxd"))
+| table _time host account change
+| sort 0 _time

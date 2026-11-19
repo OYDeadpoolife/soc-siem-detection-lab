@@ -1,0 +1,20 @@
+# ID: DET-07
+# Name: Everything one login session did (auid)
+# Purpose: auid is the original login user and survives su and sudo, so it attributes root actions to the person who logged in.
+# Data: index=soc_lab sourcetype=linux_audit (auditd)
+# MITRE ATT&CK: T1078.003 Valid Accounts; supports T1136.001, T1098, T1003.008 attribution
+# Reference implementation: detections/reference_detections.py::session_activity
+# Expected on the synthetic datasets: Five records for auid=1002: sudo, useradd (two records), usermod and the read of /etc/shadow, all with uid 0 or 1000 although the login was svc-backup.
+# False positives: None: this is an investigation query. Replace 1002 with the auid you are following.
+# Tuning: Find the auid first: id svc-backup, or the auid field of the suspicious USER_CMD.
+# Status: NOT TESTED in Splunk. The detection logic is tested in Python; the SPL syntax and field extractions need validation in a real Splunk.
+# Lines that start with "#" are documentation. Paste only the lines below the blank line into the Splunk search bar.
+
+index=soc_lab sourcetype=linux_audit
+| rex "^type=(?<audit_type>\w+)"
+| rex "\bauid=(?<auid>\d+)"
+| rex "\buid=(?<uid>\d+)"
+| rex "exe=\"(?<exe>[^\"]+)\""
+| where auid="1002"
+| table _time audit_type uid exe
+| sort 0 _time
