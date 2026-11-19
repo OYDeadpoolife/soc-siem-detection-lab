@@ -1,7 +1,9 @@
 # Screenshot guide
 
-These files do not exist yet. Take real screenshots on your own machine, save them in this folder with exactly these names and remove
-the comment markers around the matching lines in the main `README.md`. A screenshot must show a real run: do not edit or fabricate results.
+Images `01` and `04` are rendered from the real output of the commands below, run on a clean clone of the repository. They are not
+photographs of a terminal window, and nothing in them is edited. Image `01` pipes the output through `jq 'map_values(length)'` instead of `less`, so
+that it fits in one picture. Images `02` and `03` do not exist, because the queries have not been run in Splunk or Elastic. A screenshot must show a
+real run: do not edit or fabricate results.
 
 | File | Open | Do | What must be visible |
 |---|---|---|---|

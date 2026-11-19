@@ -146,14 +146,22 @@ Full descriptions, false positives, tuning and blind spots: [docs/detections.md]
 
 ## Screenshots
 
-Real screenshots are added by the author after running the project in a real Splunk or Elastic. The list of planned screenshots and
-how to take them is in [screenshots/README.md](screenshots/README.md). Until they exist, no image is embedded here.
+The images below are rendered from the real output of the commands shown, run on a clean clone of this repository. They are not
+photographs of a terminal window, and nothing in them is edited. The commands are listed in [screenshots/README.md](screenshots/README.md).
+**No Splunk or Elastic screenshot is included**, because the queries have not been run in those products.
+
+**The Python reference detections** (the number is how many results each detection returns on the synthetic data):
+
+![Reference detections output](screenshots/01-reference-detections.png)
+
+**The test suite:**
+
+![Test results](screenshots/04-test-results.png)
 
 <!--
-![Reference detections output](screenshots/01-reference-detections.png)
+After you run the queries in a real Splunk or Elastic, add:
 ![Splunk: success after failures](screenshots/02-splunk-det02.png)
 ![Kibana Discover](screenshots/03-kibana-discover.png)
-![Test results](screenshots/04-test-results.png)
 -->
 
 ## Testing
