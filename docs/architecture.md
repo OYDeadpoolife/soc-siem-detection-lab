@@ -7,6 +7,12 @@ captured for this repository**; the data comes from the generator. The firewall 
 lab project.
 
 ```mermaid
+---
+config:
+  htmlLabels: false
+  flowchart:
+    htmlLabels: false
+---
 flowchart LR
     subgraph WAN["WAN 203.0.113.0/24 (simulated Internet)"]
         K["kali01 203.0.113.45<br/>(attacker)"]
@@ -38,6 +44,12 @@ flowchart LR
 ## How data moves
 
 ```mermaid
+---
+config:
+  htmlLabels: false
+  flowchart:
+    htmlLabels: false
+---
 flowchart LR
     A["Log sources<br/>auth.log, auditd, Sysmon"] --> B["Collection<br/>forwarder or beat"]
     B --> C["Parsing and normalization<br/>sourcetype / ECS fields"]

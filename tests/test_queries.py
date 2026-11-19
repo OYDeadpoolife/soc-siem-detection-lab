@@ -142,6 +142,7 @@ def test_mermaid_diagrams_have_a_known_type_and_balanced_brackets():
     for path in list((ROOT / "docs").glob("*.md")) + [ROOT / "README.md"]:
         for block in re.findall(r"```mermaid\n(.*?)\n```", path.read_text(encoding="utf-8"), re.DOTALL):
             count += 1
+            block = re.sub(r"\A---\n.*?\n---\n", "", block, flags=re.DOTALL)  # optional Mermaid config front matter
             assert block.split()[0] in {"flowchart", "graph", "sequenceDiagram"}, path.name
             for opening, closing in ("[]", "()", "{}"):
                 assert block.count(opening) == block.count(closing), f"{path.name}: unbalanced {opening}{closing}"

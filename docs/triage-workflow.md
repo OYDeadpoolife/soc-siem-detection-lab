@@ -3,6 +3,12 @@
 A junior analyst's routine for an alert. Adjust the details to your organisation's runbooks and ticketing system.
 
 ```mermaid
+---
+config:
+  htmlLabels: false
+  flowchart:
+    htmlLabels: false
+---
 flowchart TD
     A["Alert arrives"] --> B["1. Read the alert:<br/>rule, severity, entities, time"]
     B --> C["2. Validate:<br/>look at the raw events"]

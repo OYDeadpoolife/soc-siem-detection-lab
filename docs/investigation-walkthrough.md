@@ -114,6 +114,12 @@ The address `203.0.113.45` links an SSH attack on `web01` (10:02–10:12) to a d
 one incident with a single actor *using the same infrastructure* — **an inference, not proof**: a shared address can also be a shared proxy.
 
 ```mermaid
+---
+config:
+  htmlLabels: false
+  flowchart:
+    htmlLabels: false
+---
 flowchart LR
     A["203.0.113.45"] -->|"10:02 brute force"| B["web01 SSH"]
     B -->|"10:06:41 svc-backup login"| C["su to labadmin<br/>sudo bash"]

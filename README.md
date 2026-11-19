@@ -52,6 +52,12 @@ detections, tests), pytest, Mermaid diagrams, GitHub Actions.
 ## Architecture
 
 ```mermaid
+---
+config:
+  htmlLabels: false
+  flowchart:
+    htmlLabels: false
+---
 flowchart LR
     subgraph WAN["WAN 203.0.113.0/24 (simulated Internet)"]
         K["kali01<br/>203.0.113.45<br/>(attacker)"]
